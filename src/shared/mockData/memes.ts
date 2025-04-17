@@ -80,6 +80,7 @@ if (!globalForMemes.memes) {
 }
 
 export const getMemes = () => globalForMemes.memes!;
+export const getColumns = () => memeTableColumns;
 export const updateMeme = (updatedMeme: Meme) => {
   globalForMemes.memes = globalForMemes.memes!.map((meme) =>
     meme.id === updatedMeme.id ? { ...meme, ...updatedMeme } : meme,

@@ -5,8 +5,8 @@ import { FlatCompat } from '@eslint/eslintrc';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const eslintPluginPrettier = require('eslint-plugin-prettier'); // Підключаємо плагін Prettier для ESLint
-const prettierConfig = require('./prettier.config.js');
+import eslintPluginPrettier from 'eslint-plugin-prettier'; // Підключаємо плагін Prettier для ESLint
+import prettierConfig from './prettier.config.js';
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,

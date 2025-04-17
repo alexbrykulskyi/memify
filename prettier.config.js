@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   semi: true, // Використовувати крапку з комою
   singleQuote: true, // Використовувати одинарні лапки замість подвійних
   trailingComma: 'all', // Додавати кому в кінці об'єктів/масивів

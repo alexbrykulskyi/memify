@@ -1,9 +1,8 @@
-import { MemeListView, MemesResponse } from '@/entities/Meme';
+import { MemeListView } from '@/entities/Meme';
+import { getMemes } from '@/shared/mockData/memes';
 
 const ListPage = async () => {
-  const res = await fetch('http://localhost:3000/api/memes');
-  const memesData: MemesResponse = await res.json();
-  const { memes } = memesData;
+  const memes = getMemes();
   return (
     <main>
       <MemeListView memes={memes} />
