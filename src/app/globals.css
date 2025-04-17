@@ -1,8 +1,12 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-primary: #2563eb;
+  --color-primary-foreground: #ffffff;
 }
 
 @theme inline {
