@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation';
 import { Navbar as NavbarHeroUi, NavbarBrand, NavbarContent, NavbarItem } from '@heroui/navbar';
 import { Image } from '@heroui/image';
-import { Link } from '@heroui/link';
+import Link from 'next/link';
 
 export const Navbar = () => {
   const pathname = usePathname();
@@ -20,10 +20,14 @@ export const Navbar = () => {
 
       <NavbarContent className="sm:flex gap-4" justify="center">
         <NavbarItem data-active={pathname === '/table'}>
-          <Link href="/table">Table</Link>
+          <Link className={`${pathname === '/table' && 'text-blue-950'}`} href="/table">
+            Table
+          </Link>
         </NavbarItem>
         <NavbarItem data-active={pathname === '/list'}>
-          <Link href="/list">List</Link>
+          <Link className={`${pathname === '/list' && 'text-blue-950'}`} href="/list">
+            List
+          </Link>
         </NavbarItem>
       </NavbarContent>
     </NavbarHeroUi>
