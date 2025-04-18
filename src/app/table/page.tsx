@@ -1,6 +1,6 @@
 import { Table } from '@/widgets/Table';
 
-const TablePage = async () => {
+const TablePage = () => {
   return (
     <main>
       <div className="bg-white rounded-lg shadow p-4">

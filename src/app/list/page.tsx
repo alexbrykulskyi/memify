@@ -1,6 +1,6 @@
 import { MemeListView } from '@/entities/Meme';
 
-const ListPage = async () => {
+const ListPage = () => {
 
   return (
     <main>
