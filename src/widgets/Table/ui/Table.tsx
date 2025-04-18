@@ -1,20 +1,28 @@
 'use client';
 
-import { Dispatch, SetStateAction, useState } from 'react';
+import {Dispatch, SetStateAction, useEffect, useState} from 'react';
 import { Modal } from '@/shared/ui/Modal';
 import { Column, Meme, MemeTableView } from '@/entities/Meme';
 import { EditableMeme } from '@/features/EditableMeme';
 import { useDisclosure } from '@heroui/react';
 
-interface TableProps {
-  memes: Meme[];
-  columns: Column[];
-}
-
-export const Table = ({ memes: memesData, columns }: TableProps) => {
-  const [memes, setMemes] = useState<Meme[]>(memesData);
+export const Table = () => {
+  const [memes, setMemes] = useState<Meme[]>([]);
+  const [columns, setColumns] = useState<Column[]>([]);
   const [value, setValue] = useState<Meme>();
   const [loadingId, setLoadingId] = useState<number | null>(null);
+  useEffect(() => {
+    const fetchMemes = async () => {
+      const res = await fetch('/api/memes');
+      const data: {
+        memes: Meme[];
+        columns: Column[];
+      } = await res.json();
+      setMemes(data.memes);
+      setColumns(data.columns);
+    };
+    fetchMemes();
+  }, []);
 
   const openEditForm = async (id: number) => {
     setLoadingId(id);
